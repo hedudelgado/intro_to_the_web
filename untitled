@@ -1,0 +1,12 @@
+get '/chicha' do
+	
+":D"
+
+end
+
+
+get '/ola' do
+	
+":O"
+
+end
