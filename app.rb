@@ -1,17 +1,25 @@
 require 'sinatra'
-set :session_secret, 'super secret'
 
-get '/' do 
-	'hellooOoO!'
+get '/' do
+  'Hello!'
 end
 
-
-get '/secreto' do
-  'This is a secret page'
+get '/secret' do
+  'Hello Valentina!'
 end
 
-get '/cat' do
-  "<div style='border: 3px dashed red'>
-    <img src='http://bit.ly/1eze8aE'>
-   </div>"
+get '/new_stuff' do
+  'Hello world'
 end
+
+get '/random-cat' do
+  @name = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+	p params
+  @name = params[:name]
+  erb(:index)
+end
+
